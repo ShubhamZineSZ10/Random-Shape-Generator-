@@ -23,9 +23,9 @@ public class c2w_shapemulti extends Application {
     private Button c2w_startButton;
 
     public void start(Stage stage){
-        c2w_canvas = new Canvas(1800,800);
+        c2w_canvas = new Canvas(640,480);
         c2w_redraw();
-        c2w_startButton = new Button("chalu kr!");
+        c2w_startButton = new Button("start!");
         c2w_startButton.setOnAction(e -> c2w_doStartorStop());
         HBox c2w_bottom=new HBox(c2w_startButton);
         c2w_bottom.setStyle("-fx-padding:6px; -fx-border-color:black;");
@@ -34,7 +34,7 @@ public class c2w_shapemulti extends Application {
         c2w_root.setBottom(c2w_bottom);
         Scene c2w_scene=new Scene(c2w_root);
         stage.setScene(c2w_scene);
-        stage.setTitle("kaisa laga project bhailog!");
+        stage.setTitle("Click start to Make Random Art!");
         stage.setResizable(false);
         stage.show();
     }
@@ -106,7 +106,7 @@ public class c2w_shapemulti extends Application {
     }
     private void c2w_doStartorStop(){
         if(c2w_running == false){
-            c2w_startButton.setText("band kr..");
+            c2w_startButton.setText("stop");
             c2w_runner=new c2w_runner();
             c2w_running =true;
             c2w_runner.start();
